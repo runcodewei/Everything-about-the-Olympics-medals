@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+
+
+</head>
+<body>
+  <body>
+    <div class="page">
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h1>Everything about the Olympic medals</h1>
+          <p>This visualisation provides some information on the Olympic medals in the recent Olympics: the 2020 Tokyo Summer Olympic Games 
+            and the 2022 Beijing Winter Olympic Games.</p>
+        </div>
+      </div>
+      <!-- end pure grid group -->
+  
+
+      <!-- pure grid group -->
+        <div class="pure-g">
+          <div class="pure-u-1-1" >
+            <h2>1. An overview of the medals distribution</h2>
+            <p>Following two geographic maps display the total medals that each participating country earned. Hover over each country 
+            to see more details.
+            </p>
+          </div>
+          <div class="pure-u-1-1">
+            <div id="vis1" class="vis-container" style="margin-left: 0px;" ></div>
+            <div id="vis2" class="vis-container" style="margin-left: 0px;"></div>
+            <p>From the above, we can see that the national teams generally performed better in the Summer Games than the Winter Games,
+            as there are more participating sports in the Summer Games than the Winter Games.</p>
+          </div>
+        </div>
+      <!-- end pure grid group -->
+
+
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h2>2. A close look at the top medal earning countries</h2>
+          <p>Following are the top 10 countries that earned the most amount of medals in the Summer Games and the Winter Games 
+            respectively.</p>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div id="vis3" class="vis-container" style="margin-left: 0px;"></div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div id="vis4" class="vis-container" style="margin-left: 100px;"></div>
+        </div>
+
+        <div class="pure-u-1-1">
+          <p>From the charts, we can see that the USA and China performed the best in the Summer Games, while Norway and Russia performed
+            the best in the Winter Games.</p>
+        </div>
+
+      </div>
+      <!-- end pure grid group -->
+
+
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h2>3. Different aspects affecting the number of medals</h2>
+          <p>Following two scatterplots outline some of the factors affecting the medal distribution.</p>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div id="vis5" class="vis-container" style="margin-left: 0px;"></div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <div id="vis6" class="vis-container" style="margin-left: 50px;"></div>
+        </div>
+
+        <div class="pure-u-1-1">
+          <p>The left graph shows that, in general, those countries with a relatively high amount of  GDP per capita tend to perform better in the Olympics Games. 
+            However, there are two exceptions, both China and Russia have relatively small amount of GDP per capita, but performed quiet well.
+          </p>
+
+          <p>The right graph demonstrates that there is a correlation between the performance in the Summer Games and the Winter Games,
+            that is you can draw a diagonal line. Moreover, the national team tends to have similar rank for both games.
+          </p>
+        </div>
+
+      </div>
+      <!-- end pure grid group -->
+      
+
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h2>4. Different factors affecting the number of medals earned</h2>
+          <p>Following two scatterplots outline some of the factors affecting the medal distribution.</p>
+          <h3>Summer Games </h3>
+        </div>
+
+
+        <div class="pure-u-1-3">
+          <div id="vis7" class="vis-container" style="margin-left: 0px;"></div>
+        </div>
+
+        <div class="pure-u-1-3">
+          <div id="vis8" class="vis-container" style="margin-left: 50px;"></div>
+        </div>
+
+        <div class="pure-u-1-3">
+          <div id="vis9" class="vis-container" style="margin-left: 70px;"></div>
+        </div>
+
+        <div class="pure-u-1-1">
+          <p>From the charts, we can see that the USA is leading the Summer Games with the most amount of gold, silver, and bronze medals.</p>
+          <h3>Winter Games </h3>
+        </div>
+
+        <div class="pure-u-1-3">
+          <div id="vis10" class="vis-container" style="margin-left: 0px;"></div>
+        </div>
+
+        <div class="pure-u-1-3">
+          <div id="vis11" class="vis-container" style="margin-left: 50px;"></div>
+        </div>
+
+        <div class="pure-u-1-3">
+          <div id="vis12" class="vis-container" style="margin-left: 70px;"></div>
+        </div>
+
+        <div class="pure-u-1-1">
+          <p>On the other side, the Winter Games is a little bit competitive. With Norway securing the most amount of gold medals, and Russia securing
+            most amount of silver medals. Lastly, Russia and Canada both seucring the equal amount of bronze medals.
+          </p>
+        </div>
+
+      </div>
+      <!-- end pure grid group -->
+
+  
+      <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h2>5. Conclusion</h2>
+          <p>Overall, there are some differences between the Summer Games and the Winter Games. The Summer Games had more 
+          participating sports than the Winter Games, and it is easier to earn medals in the former than the latter. In addition, 
+          majority of the medal earning countries in the Winter Games were the ones with a good economy.
+          </p>
+        </div>
+      </div>
+  
+  
+    </div> <!-- end page -->
+  
+    <script type="text/javascript">
+  var vg1 = "js/summer_medals.vg.json";
+  var vg2 = "js/winter_medals.vg.json";
+  var vg3 = "js/summer_top10.vg.json";
+  var vg4 = "js/winter_top10.vg.json";
+  var vg5 = "js/gdp.vg.json";
+  var vg6 = "js/rank_association.vg.json";
+  var vg7 = "js/summer_gold.vg.json";
+  var vg8 = "js/summer_silver.vg.json";
+  var vg9 = "js/summer_bronze.vg.json";
+  var vg10 = "js/winter_gold.vg.json";
+  var vg11 = "js/winter_silver.vg.json";
+  var vg12 = "js/winter_bronze.vg.json";
+
+
+  vegaEmbed('#vis1', vg1, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis2', vg2, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis3', vg3, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis4', vg4, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis5', vg5, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis6', vg6, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis7', vg7, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis8', vg8, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis9', vg9, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis10', vg10, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis11', vg11, {"action": false}).then(function(result) {}).catch(console.error);
+  vegaEmbed('#vis12', vg12, {"action": false}).then(function(result) {}).catch(console.error);
+
+
+  
+    </script>
+  </body>
+  
+  
+<div id="choropleth_map"></div>
+
+
+</body>
+</html>

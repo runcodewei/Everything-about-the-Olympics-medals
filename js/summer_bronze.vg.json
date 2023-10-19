@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "data/olympic_medals.csv"
+    },
+    "title": {
+      "text": "Bronze medals",
+      "align": "center",
+      "font": "Open sans",
+      "fontSize": 20
+    },
+    "transform": [
+        {"filter": "datum.Bronze_Summer > 12"}
+      ],
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },{
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "Bronze_Summer", "type": "quantitative"}
+      }
+    }],
+    "encoding": {
+      "theta": {"field": "Bronze_Summer", "type": "quantitative", "stack": true},
+      "radius": {"field": "Bronze_Summer", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {"field": "Country", "type": "ordinal", "legend": null},
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Bronze_Summer", "type": "quantitative", "title": "Bronze medals"}
+      ]
+    }
+  }

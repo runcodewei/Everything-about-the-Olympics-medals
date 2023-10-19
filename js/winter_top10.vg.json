@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "data": { "url": "data/olympic_medals.csv"},
+  "title": {
+    "text": "Winter Games",
+    "align": "center",
+    "font": "Open Sans, sans-serif",
+    "fontSize": 20
+  },
+  "width": 300,
+  "height":240,
+  "transform": [
+    {"filter": "datum.Total_Winter > 15"}
+  ],
+  "mark": "bar",
+  "encoding": {
+      "x": {"field": "Country", "type": "ordinal", "title": "Country"},
+      "y": {"field": "Total_Winter", "type": "quantitative", "title": "Total medals"},
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Total_Winter", "type": "quantitative", "title": "Total medals"}
+      ],
+      "opacity": {
+        "condition": {"test": "datum.Total_Winter > 36", "value": 0.8},
+        "value": 0.2
+      }
+}
+}

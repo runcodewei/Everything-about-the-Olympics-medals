@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "data/olympic_medals.csv"
+    },
+    "title": {
+      "text": "Gold medals",
+      "align": "center",
+      "font": "Open sans",
+      "fontSize": 20
+    },
+    "transform": [
+        {"filter": "datum.Gold_Winter > 6"}
+      ],
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },{
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "Gold_Winter", "type": "quantitative"}
+      }
+    }],
+    "encoding": {
+      "theta": {"field": "Gold_Winter", "type": "quantitative", "stack": true},
+      "radius": {"field": "Gold_Winter", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
+      "color": {"field": "Country", "type": "ordinal", "legend": null},
+      "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Gold_Winter", "type": "quantitative", "title": "Gold medals"}
+      ]
+    }
+  }
